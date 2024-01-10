@@ -30,13 +30,16 @@ public class UserController {
     @GetMapping("/{userName}")
     public ResponseEntity<ResponseWrapper> getUserByUserName(@PathVariable("userName") String userName) {
         UserDTO user = userService.findByUserName(userName);
-        return ResponseEntity.ok(new ResponseWrapper("User is successfully retrieved", user, HttpStatus.OK));
+        return ResponseEntity.ok(new ResponseWrapper("User is successfully retrieved",
+                user, HttpStatus.OK));
     }
 
     @PostMapping
     public ResponseEntity<ResponseWrapper> createUser(@RequestBody UserDTO user) {
         userService.save(user);
-        return ResponseEntity.status(HttpStatus.CREATED).body(new ResponseWrapper("User is successfully created", HttpStatus.CREATED));
+        return ResponseEntity.status(HttpStatus.CREATED)
+                .body(new ResponseWrapper("User is successfully created",
+                        HttpStatus.CREATED));
     }
 
     @PutMapping
