@@ -1,4 +1,4 @@
-package com.config;
+package com.cydeo.config;
 
 import org.keycloak.adapters.KeycloakConfigResolver;
 import org.keycloak.adapters.springboot.KeycloakSpringBootConfigResolver;
